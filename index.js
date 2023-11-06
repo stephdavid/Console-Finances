@@ -92,3 +92,17 @@ const financesArrayofArrays = [
 // calculate the total number of months in the data set - use the length property to return the number of elements in an array.
 
 let totalMonths = financesArrayofArrays.length;
+
+//Log the total number of months
+console.log("The total number of months in the dataset is " + totalMonths + ".");
+
+let sum = 0;
+
+// iterate over each item in the array
+for (let i = 0; i < financesArrayofArrays.length; i++) {
+  sum += financesArrayofArrays[i][1];
+}
+
+console.log("The net total amount of Profit/Losses over the entire period is " + sum);
+
+ 
