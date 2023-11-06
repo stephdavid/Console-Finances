@@ -25,4 +25,7 @@ And so, as I first guessed, "array with two fields" is an "array of arrays". For
 
 2. VSCode (ESLint to be specific) is such a nag. In the index.html head section, why is the X-UA-Compatible meta element not needed? Found a Stack Overflow question/answer on it - https://stackoverflow.com/questions/26346917/why-use-x-ua-compatible-ie-edge-anymore. Blah blah blah - something to do with Internet Explorer which is no longer supported - hurrah! So, I removed it.
      ![VSCode nag message ](vscode-nag.png)
-3. 
+
+3. Changed the type of array of array from var to const
+
+4. 

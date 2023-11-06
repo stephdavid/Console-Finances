@@ -1,6 +1,6 @@
 // Create an array of arrays
 
-let financesArrayofArrays = [
+const financesArrayofArrays = [
   ['Jan-2010', 867884],
   ['Feb-2010', 984655],
   ['Mar-2010', 322013],
@@ -86,5 +86,9 @@ let financesArrayofArrays = [
   ['Nov-2016', 795914],
   ['Dec-2016', 60988],
   ['Jan-2017', 138230],
-  ['Feb-2017', 671099],
+  ['Feb-2017', 671099]
 ];
+
+// calculate the total number of months in the data set - use the length property to return the number of elements in an array.
+
+let totalMonths = financesArrayofArrays.length;
