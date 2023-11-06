@@ -28,4 +28,46 @@ And so, as I first guessed, "array with two fields" is an "array of arrays". For
 
 3. Changed the type of array of array from var to const
 
-4. 
+4. TypeError: Cannot read properties of undefined (reading '1')
+    at Object.<anonymous> 
+
+I have a javascript array of two fields. I want to get the average of the changes to the elements of the second column over the entire perdiod
+
+
+
+
+    First you can calculate the changes using map, and putting 0 in the first value of the array.
+
+    Read up on map and learn the syntax
+
+    The Array.map() method creates a new array from the results of calling a function for every element.
+
+
+
+financesArr[i][1].map(Math.abs(num1 - num2))
+
+
+
+
+const changes = financesArr.map((element, index) =>
+  index === 0 ? 0 : element - profitLosses[index - 1]
+);
+
+const total = profitLosses.reduce((acc, item) => acc + item, 0);
+const averageChange = total / (profitLosses.length - 1);
+
+console.log(averageChange);
+
+
+
+
+
+===
+
+    Then you sum the changes using reduce.
+
+
+    Then you divide by the length-1 (because there are one less changes than there are profit&losses)
+
+toFixed - toFixed(x) is an inbuilt function in JS. It is used to round off a decimal number to specific decimal places.
+    

@@ -1,6 +1,6 @@
 // Create an array of arrays
 
-const financesArrayofArrays = [
+const financesArr = [
   ['Jan-2010', 867884],
   ['Feb-2010', 984655],
   ['Mar-2010', 322013],
@@ -91,18 +91,36 @@ const financesArrayofArrays = [
 
 // calculate the total number of months in the data set - use the length property to return the number of elements in an array.
 
-let totalMonths = financesArrayofArrays.length;
+let totalMonths = financesArr.length;
 
 //Log the total number of months
-console.log("The total number of months in the dataset is " + totalMonths + ".");
+console.log("```text\nFinancial Analysis\n==================\nTotal Months: " + totalMonths);
+
+/* -------------- */
 
 let sum = 0;
 
 // iterate over each item in the array
-for (let i = 0; i < financesArrayofArrays.length; i++) {
-  sum += financesArrayofArrays[i][1];
+for (let i = 0; i < financesArr.length; i++) {
+  sum += financesArr[i][1];
 }
 
-console.log("The net total amount of Profit/Losses over the entire period is " + sum);
+console.log("Total: $" + sum);
 
- 
+/* -------------- */
+
+let sumOfChanges = 0;
+
+for (let i = 1; i < financesArr.length; i++) {
+  const previousValue = financesArr[i - 1][1];
+  const currentValue = financesArr[i][1];
+  const change = currentValue - previousValue;
+  sumOfChanges += change;
+}
+
+const averageChange = sumOfChanges / (financesArr.length - 1);
+let roundedAverageChange = averageChange.toFixed(2);
+
+console.log("Average Change: " + roundedAverageChange); 
+
+/* ok up to here */
