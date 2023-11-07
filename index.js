@@ -1,4 +1,4 @@
-// Create an array of arrays
+// Create an array of arrays - 2 fields/columns - col1 [0] month and year - col2 [1] profit (positive number) and loss (negative number)
 
 const financesArr = [
   ['Jan-2010', 867884],
@@ -89,69 +89,102 @@ const financesArr = [
   ['Feb-2017', 671099]
 ];
 
-// calculate the total number of months in the data set - use the length property to return the number of elements in an array.
+// Task 1: Calculate the total number of months in the data set
 
+// Use the length property to return the number of elements in the array
 let totalMonths = financesArr.length;
 
-//Log the total number of months
+//Log the total number of months to the console
 console.log("```text\nFinancial Analysis\n==================\nTotal Months: " + totalMonths);
 
 /* -------------- */
 
+// Task 2: Calculate the net total amount of profit/losses 
+
+// Declare and initialize a variable
 let sum = 0;
 
-// iterate over each item in the array
+// Use a for loop to iterate over each numerical element in the array to add (+=) all them together  
 for (let i = 0; i < financesArr.length; i++) {
   sum += financesArr[i][1];
 }
 
+// Log the net total to the console
 console.log("Total: $" + sum);
 
 /* -------------- */
 
+// Task 3: Calculate the average of the changes in the numerical elements over the entire period
+
+// Declare and initialize a variable
 let sumOfChanges = 0;
 
+// Using a for loop, iterate through the array
 for (let i = 1; i < financesArr.length; i++) {
+  // For a comparison, determine the previous element by a substraction of one row and store its value in a const variable (it's not going to change)
   const previousValue = financesArr[i - 1][1];
+  // Store the current value in a const variable
   const currentValue = financesArr[i][1];
+  // Calculate the change amount
   const change = currentValue - previousValue;
+  // Add to the value of change to the value of the sumOfChanges variable
   sumOfChanges += change;
 }
-
-const averageChange = sumOfChanges / (financesArr.length - 1);
+// Find the average by dividing sum of changes by the length of the array
+let averageChange = sumOfChanges / (financesArr.length - 1);
+// Round the result to 2 decimal places 
 let roundedAverageChange = averageChange.toFixed(2);
 
+// Log the rounded average change to the console
 console.log("Average Change: " + roundedAverageChange);
 
 /* -------------- */
 
+// Task 4: Calculate the greatest increase in Profit/Losses(date and amount) 
+
+// Declare and initialize variables
 let maxIncrease = 0;
 let monthYear = "Jan-2010";
 
+// Using a for loop, iterate through the array to get current values
 for (let i = 0; i < financesArr.length; i++) {
+  // Using a nested for loop, iterate through the array to get preceding values
   for (let j = i + 1; j < financesArr.length; j++) {
+    // Substract the current value from the preceding value to get the value of the increase (positive or negative)
     const increase = financesArr[j][1] - financesArr[i][1];
+    // In an if statement compare the increase value to the maxIncrease value
     if (increase > maxIncrease) {
+      // If the statement is true, that increase becomes the maxIncrease
       maxIncrease = increase;
+      // Add the value of the corresponding date
       monthYear = financesArr[i][0];
     }
   }
 }
-
+// Log the data and value of the maximum increase
 console.log("Greatest Increase in Profits/Losses: " + monthYear + " ($" + maxIncrease + ")");
 
 /* -------------- */
 
+// Calculate the greatest decrease in Profit/Losses (date and amount)
+
+// Declare and initialize a variable - the month and year variable had already been declared
 let maxDecrease = 0;
 
+// Using a for loop, iterate through the array to get current values
 for (let i = 0; i < financesArr.length; i++) {
+  // Using a nested for loop, iterate through the array to get preceding values
   for (let j = i + 1; j < financesArr.length; j++) {
-    const decrease = financesArr[j][1] - financesArr[i][1];
+    // Substract the current value from the preceding value to get the difference and store it in the decrease variable
+    let decrease = financesArr[j][1] - financesArr[i][1];
+    // Using a if statement compare the value of decrease with maxDescrease
     if (decrease < maxDecrease) {
+      // If greater decrease becomes maxDecrease
       maxDecrease = decrease;
+      // Determine the corresponding date
       monthYear = financesArr[i][0];
     }
   }
 }
-
+// Log the data and value of the maximum increase
 console.log("Greatest Decrease in Profits/Losses: " + monthYear + " ($" + maxDecrease + ")");
