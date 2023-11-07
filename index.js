@@ -121,6 +121,37 @@ for (let i = 1; i < financesArr.length; i++) {
 const averageChange = sumOfChanges / (financesArr.length - 1);
 let roundedAverageChange = averageChange.toFixed(2);
 
-console.log("Average Change: " + roundedAverageChange); 
+console.log("Average Change: " + roundedAverageChange);
 
-/* ok up to here */
+/* -------------- */
+
+let maxIncrease = 0;
+let monthYear = "Jan-2010";
+
+for (let i = 0; i < financesArr.length; i++) {
+  for (let j = i + 1; j < financesArr.length; j++) {
+    const increase = financesArr[j][1] - financesArr[i][1];
+    if (increase > maxIncrease) {
+      maxIncrease = increase;
+      monthYear = financesArr[i][0];
+    }
+  }
+}
+
+console.log("Greatest Increase in Profits/Losses: " + monthYear + " ($" + maxIncrease + ")");
+
+/* -------------- */
+
+let maxDecrease = 0;
+
+for (let i = 0; i < financesArr.length; i++) {
+  for (let j = i + 1; j < financesArr.length; j++) {
+    const decrease = financesArr[j][1] - financesArr[i][1];
+    if (decrease < maxDecrease) {
+      maxDecrease = decrease;
+      monthYear = financesArr[i][0];
+    }
+  }
+}
+
+console.log("Greatest Decrease in Profits/Losses: " + monthYear + " ($" + maxDecrease + ")");
