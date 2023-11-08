@@ -95,7 +95,7 @@ const financesArr = [
 let totalMonths = financesArr.length;
 
 //Log the total number of months to the console
-console.log("```text\nFinancial Analysis\n==================\nTotal Months: " + totalMonths);
+console.log("Financial Analysis\n==================\nTotal Months: " + totalMonths);
 
 /* -------------- */
 

@@ -90,7 +90,13 @@
 
 ---
 
-10. References used include:
+10. Here's a screenshot of index.html showing the console and financial analysis.
+
+![Screemshot ](screenshot.png)
+
+---
+
+1.  References used include:
      
     JavaScript 2D Array – Two Dimensional Arrays in JS - Joel Olawanle, Free Code Camp
     https://www.freecodecamp.org/news/javascript-2d-arrays/
