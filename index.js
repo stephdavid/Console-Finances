@@ -157,7 +157,7 @@ for (let i = 0; i < financesArr.length; i++) {
       // If the statement is true, that increase becomes the maxIncrease
       maxIncrease = increase;
       // Add the value of the corresponding date
-      monthYear = financesArr[i][0];
+      monthYear = financesArr[j][0];
     }
   }
 }
@@ -168,21 +168,21 @@ console.log("Greatest Increase in Profits/Losses: " + monthYear + " ($" + maxInc
 
 // Calculate the greatest decrease in Profit/Losses (date and amount)
 
-// Declare and initialize a variable - the month and year variable had already been declared
+// Declare and initialize a variable - the month and year variable has already been declared
 let maxDecrease = 0;
 
 // Using a for loop, iterate through the array to get current values
 for (let i = 0; i < financesArr.length; i++) {
-  // Using a nested for loop, iterate through the array to get preceding values
+  // Using a nested for loop, iterate through the array to get following values
   for (let j = i + 1; j < financesArr.length; j++) {
-    // Substract the current value from the preceding value to get the difference and store it in the decrease variable
+    // Substract the current value from the following value to get the difference and store it in the decrease variable
     let decrease = financesArr[j][1] - financesArr[i][1];
     // Using a if statement compare the value of decrease with maxDescrease
     if (decrease < maxDecrease) {
-      // If greater decrease becomes maxDecrease
+      // If less than maxDecrease decrease becomes maxDecrease
       maxDecrease = decrease;
       // Determine the corresponding date
-      monthYear = financesArr[i][0];
+      monthYear = financesArr[j][0];
     }
   }
 }
