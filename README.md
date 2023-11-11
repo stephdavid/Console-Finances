@@ -81,12 +81,12 @@
 ---
 
 8. * The greatest increase in Profit/Losses (date and amount) over the entire period.
-        * I used a **for loop** to iterate over the elements. I used a **nested for loop** to get the value of the previous element. I then subtracted the current value from the previous value to get the difference, and stored that in the variable decrease. Using an if statement, I compared that value with the value of the maxIncrease variable. If greater, then that amount became the value of maxIncrease. Then the corresponding date was determined. And that date with the amount of the maxIncrease was logged to the console. 
+        * I used a **for loop** to iterate over the current row date and number elements. I used a **nested for loop** to get the value of the following row number element. I then subtracted the current number from the following number to get the difference, and stored that in the variable decrease. Using an if statement, I compared that value with the value of the maxIncrease variable. If greater (a larger number), then that amount became the value of maxIncrease. Then the corresponding date was determined. And that date with the amount of the maxIncrease was logged to the console. 
 
 ---
 
 9. * The greatest decrease in Profit/Losses (date and amount) over the entire period.
-        * I used a **for loop** to iterate over the elements. I used a **nested for loop** to get the value of the previous element. I then subtracted the current value from the previous value to get the difference, and stored that in the variable decrease. Using an if statement, I compared that value with the value of the maxDecrease variable. If less, then that amount became the value of maxDecrease. Then the corresponding date was determined. And that date with the amount of the maxDecrease was logged to the console. 
+        * I used a **for loop** to iterate over the current row date and number elements. I used a **nested for loop** to get the value of the following row number element. I then subtracted the current number from the following number to get the difference, and stored that in the variable decrease. Using an if statement, I compared that value with the value of the maxDecrease variable. If less (a smaller number), then that amount became the value of maxDecrease. Then the corresponding date was determined. And that date with the amount of the maxDecrease was logged to the console. 
 
 ---
 
