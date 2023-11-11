@@ -81,18 +81,18 @@
 ---
 
 8. * The greatest increase in Profit/Losses (date and amount) over the entire period.
-        * I used a **for loop** to iterate over the current row date and number elements. I used a **nested for loop** to get the value of the following row number element. I then subtracted the current number from the following number to get the difference, and stored that in the variable decrease. Using an if statement, I compared that value with the value of the maxIncrease variable. If greater (a larger number), then that amount became the value of maxIncrease. Then the corresponding date was determined. And that date with the amount of the maxIncrease was logged to the console. 
+        * I used a **for loop** to iterate through the array to access current row date and number elements - as the second row is the first changed row, I started the count at 1. I used a **nested for loop** to get the values of the immediately preceeding row and started the count at 1 -1 (or 0). I then subtracted the preceeding number from the current number to get the difference, and stored that in the variable increase. Using an if statement, I compared that value with the value of the maxIncrease variable. If greater (a larger number), then that amount became the value of maxIncrease. Then the corresponding date was determined. And that date that corresponded with the amount of the maxIncrease was logged to the console. 
 
 ---
 
 9. * The greatest decrease in Profit/Losses (date and amount) over the entire period.
-        * I used a **for loop** to iterate over the current row date and number elements. I used a **nested for loop** to get the value of the following row number element. I then subtracted the current number from the following number to get the difference, and stored that in the variable decrease. Using an if statement, I compared that value with the value of the maxDecrease variable. If less (a smaller number), then that amount became the value of maxDecrease. Then the corresponding date was determined. And that date with the amount of the maxDecrease was logged to the console. 
+        * I used a **for loop** to iterate through the array to access current row date and number elements - as the second row is the first changed row, I started the count at 1. I used a **nested for loop** to get the values of the immediately preceeding row and started the count at 1 -1 (or 0). I then subtracted the preceeding number from the current number to get the difference, and stored that in the variable decrease. Using an if statement, I compared that value with the value of the maxDecrease variable. If less (a smaller number), then that amount became the value of maxDecrease. Then the corresponding date was determined. And that date that corresponded with the amount of the maxDecrease was logged to the console. 
 
 ---
 
 10. Here's a screenshot of index.html showing the console and financial analysis.
 
-![Screemshot ](screenshot.png)
+![Screenshot ](screenshot.png)
 
 ---
 
