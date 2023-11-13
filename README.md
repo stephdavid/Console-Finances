@@ -1,6 +1,11 @@
 # Console-Finances
 
 ## Module 4 Challenge - JavaScript: Console Finances
+
+🎉 Woo hoo! 🎉
+
+I finally cracked it. It turns out that I didn't require the second ** for loop **, and only needed to refactor lines 152 and 174. Pulled out some very rusty debugging skills which showed funky unexpected things going on. Have scheduled an appointment with a tutor to hone these skills.
+
 1. When I first looked at the requirements ReadMe file, in  reference to the financial 
    dataset in the starter/index.js file, I was intrigued by the term "arrays with two fields".
 

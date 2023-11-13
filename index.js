@@ -148,17 +148,14 @@ let monthYear = "Jan-2010";
 
 // Using a for loop iterate through the array to access current row date and number elements - as the second row is the first changed row, start the count at 1 not 0
 for (let i = 1; i < financesArr.length; i++) {
-  // Using a nested for loop, iterate through the array to access the immediately preceeding row number - start the count at 1 - 1 or 0
-  for (let j = i - 1; j < financesArr.length; j++) {
-    // Subtract the current row number from the preceeding row number to get the difference (positive or negative) and store it in the increase variable
-    const increase = financesArr[i][1] - financesArr[j][1];
-    // In an if statement, compare the increase number value to the maxIncrease value
-    if (increase > maxIncrease) {
-      // If the statement is true, i.e. increase is a larger number than the maxIncrease, then that increase amount becomes the maxIncrease
-      maxIncrease = increase;
-      // Determine the value of the corresponding current row date
-      monthYear = financesArr[i][0];
-    }
+  // Subtract the current row number from the preceeding row number to get the difference (positive or negative) and store it in the increase variable
+  const increase = financesArr[i][1] - financesArr[i - 1][1];
+  // In an if statement, compare the increase number value to the maxIncrease value
+  if (increase > maxIncrease) {
+    // If the statement is true, i.e. increase is a larger number than the maxIncrease, then that increase amount becomes the maxIncrease
+    maxIncrease = increase;
+    // Determine the value of the corresponding current row date
+    monthYear = financesArr[i][0];
   }
 }
 // Log the maximum increase amount and date of that maximum increase
@@ -173,17 +170,14 @@ let maxDecrease = 0;
 
 // Using a for loop iterate through the array to access current row date and number elements - as the second row is the first changed row, start the count at 1 not 0
 for (let i = 1; i < financesArr.length; i++) {
-  // Using a nested for loop, iterate through the array to access the immediately preceeding row number - start the count at 1 - 1 or 0
-  for (let j = i - 1; j < financesArr.length; j++) {
-    // Subtract the preceeding row number from the current row number to get the difference (positive or negative) and store it in the decrease variable
-    let decrease = financesArr[i][1] - financesArr[j][1];
-    // Using a if statement compare the value of decrease with maxDecrease
-    if (decrease < maxDecrease) {
-      // If the statement is true, i.e. increase is a smaller number than the maxDecrease, then that increase amount becomes the maxDecrease
-      maxDecrease = decrease;
-      // Determine the value of the corresponding current row date
-      monthYear = financesArr[i][0];
-    }
+  // Subtract the preceeding row number from the current row number to get the difference (positive or negative) and store it in the decrease variable
+  let decrease = financesArr[i][1] - financesArr[i - 1][1];
+  // Using a if statement compare the value of decrease with maxDecrease
+  if (decrease < maxDecrease) {
+    // If the statement is true, i.e. increase is a smaller number than the maxDecrease, then that increase amount becomes the maxDecrease
+    maxDecrease = decrease;
+    // Determine the value of the corresponding current row date
+    monthYear = financesArr[i][0];
   }
 }
 // Log the maximum decrease amount and date of that maximum decrease
